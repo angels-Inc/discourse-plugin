@@ -21,7 +21,7 @@
         auth: {
           redirect: true,
           redirectUrl: Discourse.SiteSettings.auth0_callback_url,
-          responseType: 'token'
+          responseType: 'code'
         },
         theme: {
           logo:
