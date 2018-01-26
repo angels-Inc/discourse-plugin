@@ -7,9 +7,10 @@
     document.head.appendChild(new_script);
   }
 
-  var script_url = '//cdn.auth0.com/js/lock/11.x.y/lock.min.js';
+  var script_url = '//cdn.auth0.com/js/lock/11.1.1/lock.min.js';
 
-  var Auth0Options, lock;
+  var Auth0Options;
+  var lock;
 
   appendScript(script_url, function() {
     var checkInterval = setInterval(function() {
@@ -57,7 +58,7 @@
           return this._super();
         }
 
-        Auth0Options.initialScreen = 'login;';
+        Auth0Options.initialScreen = 'login';
         lock = new Auth0Lock(
           Discourse.SiteSettings.auth0_client_id,
           Discourse.SiteSettings.auth0_domain,
@@ -88,7 +89,7 @@
             this._super();
           }
         } else {
-          Auth0Options.initialScreen = 'signUp;';
+          Auth0Options.initialScreen = 'signUp';
           lock = new Auth0Lock(
             Discourse.SiteSettings.auth0_client_id,
             Discourse.SiteSettings.auth0_domain,
