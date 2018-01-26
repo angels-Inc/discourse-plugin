@@ -24,7 +24,8 @@
           responseType: 'token'
         },
         theme: {
-          logo: require('https://storage.googleapis.com/angels-prod/public/platform/logo-social-small.jpg'),
+          logo:
+            'https://storage.googleapis.com/angels-prod/public/platform/logo-social-small.jpg',
           primaryColor: '#0e77ca'
         }
       };
