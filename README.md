@@ -1,6 +1,6 @@
 Discourse + Auth0
 =================
-
+### Fork for discuss.angels-inc.com
 This is a [Discourse](http://discourse.org) plugin to do Single Sign On using Auth0.
 
 ### Demo: https://auth0.com/forum/
