@@ -9,7 +9,7 @@
 
   var script_url = '//cdn.auth0.com/js/lock/11.x.y/lock.min.js';
 
-  var Auth0Options;
+  var Auth0Options, lock;
 
   appendScript(script_url, function() {
     var checkInterval = setInterval(function() {
@@ -58,7 +58,7 @@
         }
 
         Auth0Options.initialScreen = 'login;';
-        var lock = new Auth0Lock(
+        lock = new Auth0Lock(
           Discourse.SiteSettings.auth0_client_id,
           Discourse.SiteSettings.auth0_domain,
           Auth0Options
@@ -89,7 +89,7 @@
           }
         } else {
           Auth0Options.initialScreen = 'signUp;';
-          var lock = new Auth0Lock(
+          lock = new Auth0Lock(
             Discourse.SiteSettings.auth0_client_id,
             Discourse.SiteSettings.auth0_domain,
             Auth0Options
