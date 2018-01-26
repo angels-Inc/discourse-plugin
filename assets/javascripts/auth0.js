@@ -9,23 +9,24 @@
 
   var script_url = '//cdn.auth0.com/js/lock/11.x.y/lock.min.js';
 
-  var Auth0Options = {
-    auth: {
-      redirect: true,
-      redirectUrl: Discourse.SiteSettings.auth0_callback_url,
-      responseType: 'token'
-    },
-    theme: {
-      logo: require('https://storage.googleapis.com/angels-prod/public/platform/logo-social-small.jpg'),
-      primaryColor: '#0e77ca'
-    }
-  };
+  var Auth0Options;
 
   appendScript(script_url, function() {
     var checkInterval = setInterval(function() {
       if (!Discourse.SiteSettings) {
         return;
       }
+      Auth0Options = {
+        auth: {
+          redirect: true,
+          redirectUrl: Discourse.SiteSettings.auth0_callback_url,
+          responseType: 'token'
+        },
+        theme: {
+          logo: require('https://storage.googleapis.com/angels-prod/public/platform/logo-social-small.jpg'),
+          primaryColor: '#0e77ca'
+        }
+      };
 
       clearInterval(checkInterval);
 
